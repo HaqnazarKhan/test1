@@ -1,0 +1,93 @@
+/* --- СЕКЦИЯ БЕЗОПАСНОСТИ (ГЛАВНАЯ) --- */
+.safety-preview {
+    padding: 100px 0;
+    background-color: #fff;
+}
+
+.safety-row {
+    display: flex;
+    align-items: center; /* Центрируем текст и картинку по вертикали */
+    gap: 60px;           /* Расстояние между текстом и фото */
+}
+
+/* 1. ЛЕВАЯ ЧАСТЬ (ТЕКСТ) */
+.safety-text {
+    flex: 1; /* Занимает 50% ширины */
+}
+
+.safety-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 42px;
+    color: #2c2c2c;
+    margin-bottom: 20px;
+    line-height: 1.2;
+}
+
+.safety-desc {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+    margin-bottom: 30px;
+}
+
+/* Кнопка */
+.btn-safety {
+    display: inline-block;
+    background-color: #8c2388; /* Фиолетовый бренд */
+    color: #fff;
+    padding: 14px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(140, 35, 136, 0.2);
+}
+
+.btn-safety:hover {
+    background-color: #6a1b66;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(140, 35, 136, 0.3);
+}
+
+/* 2. ПРАВАЯ ЧАСТЬ (КАРТИНКА) */
+.safety-image {
+    flex: 1; /* Занимает 50% ширины */
+    
+    /* Стили оформления */
+    border-radius: 30px; /* Закругленные углы */
+    overflow: hidden;    /* Важно: обрезаем картинку по углам */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Красивая тень */
+    
+    /* Чтобы блок не схлопнулся, если картинка не прогрузилась */
+    min-height: 300px; 
+    position: relative;
+}
+
+.safety-image img {
+    width: 100%;       /* Растягиваем на всю ширину блока */
+    height: auto;      /* Высота подстраивается пропорционально */
+    display: block;    /* Убираем лишний отступ снизу */
+    object-fit: cover; /* Заполняет пространство без искажений */
+}
+
+/* --- АДАПТИВ (ДЛЯ ТЕЛЕФОНОВ) --- */
+@media (max-width: 992px) {
+    .safety-row {
+        flex-direction: column; /* Блоки друг под другом */
+    }
+    
+    /* Меняем порядок: Картинка сверху, Текст снизу */
+    .safety-image {
+        width: 100%;
+        order: -1; 
+        margin-bottom: 30px;
+    }
+    
+    .safety-title {
+        font-size: 32px; /* Чуть меньше шрифт на телефоне */
+    }
+}
+

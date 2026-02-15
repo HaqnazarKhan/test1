@@ -1,0 +1,56 @@
+:root {
+  --brand-color: #8c2388;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+/* Обнуление отступов */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  color: #333;
+}
+
+/* Глобальный контейнер (Сетка) */
+.container {
+  max-width: 1440px; 
+  margin: 0 auto; 
+  padding: 0 120px; /* Margin 120px из Figma */
+  width: 100%;
+}
+
+/* Адаптивность контейнера */
+@media (max-width: 1200px) {
+  .container {
+      padding: 0 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+      padding: 0 20px;
+  }
+}
+
+/* Кнопка (используется везде, поэтому в main) */
+.btn-primary {
+  background-color: var(--brand-color);
+  color: #fff !important;
+  padding: 12px 32px;
+  border-radius: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.3s;
+  display: inline-block;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+}

@@ -1,0 +1,154 @@
+.hero {
+  padding: 0;
+  background-color: #fff;
+  overflow-x: hidden;
+  margin-top: 8px;
+}
+
+.hero-container {
+  display: flex;
+  align-items: stretch;
+  min-height: 600px;
+  position: relative;
+}
+
+/* --- ЛЕВАЯ ЧАСТЬ (ФИОЛЕТОВАЯ) --- */
+.hero-info {
+  /* Ширина блока */
+  flex: 0 0 72%; /* 70% слишком много, 60% — идеально для нахлеста */
+  
+  background-color: var(--brand-color);
+  color: #fff;
+
+  /* Отступы: Слева 60px (сдвинули текст влево) */
+  padding: 120px 100px 80px 100px;
+
+  /* УБИРАЕМ ВСЕ СКРУГЛЕНИЯ У ФИОЛЕТОВОГО БЛОКА */
+  border-radius: 0;
+  clip-path: none;
+  box-shadow: none;
+
+  margin-left: -120px;
+  position: relative;
+  
+  /* ВАЖНО: Фиолетовый блок теперь СНИЗУ */
+  z-index: 1; 
+}
+
+/* Заливка влево (прямоугольная) */
+.hero-info::before {
+  content: "";
+  position: absolute;
+  top: 0; bottom: 0; right: 100%;
+  width: 100vw;
+  background-color: var(--brand-color);
+  z-index: -1;
+}
+
+.hero-title {
+  font-family: 'EB Garamond', serif;
+  font-size: 70px;
+  line-height: 1.05;
+  margin-bottom: 24px;
+  color: #FDF5E6;
+  font-weight: 300;
+}
+
+.reg-mark {
+  font-size: 0.5em;       /* Уменьшает размер (50% от родителя) */
+  vertical-align: super;  /* Поднимает символ вверх */
+  color: #FDF5E6;            /* Можно сделать его бледнее */
+  margin-left: -15px;       /* Добавляет отступ от текста */
+  line-height: 0;         /* Чтобы не увеличивать высоту всей строки */
+}
+
+
+.hero-text {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 18px;
+  line-height: 1.5;
+  max-width: 500px;
+  opacity: 0.95;
+}
+
+/* --- ПРАВАЯ ЧАСТЬ (ГИФКА) --- */
+.hero-media {
+  flex: 1;
+  position: relative;
+
+  /* СИЛЬНЫЙ НАХЛЕСТ ВЛЕВО */
+  /* Задвигаем гифку на фиолетовый фон */
+  margin-left: -150px; 
+
+  /* Растягиваем вправо */
+  margin-right: calc((100% - 100vw) / 2);
+
+  /* ВАЖНО: Гифка теперь СВЕРХУ, чтобы показать свой clip-path */
+  z-index: 10; 
+
+  display: flex;
+  align-items: center;
+}
+
+.hero-gif {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+  /* --- CLIP-PATH ДЛЯ ГИФКИ --- */
+  /* Создает овал, прижатый к правому краю.
+     Левый край будет красиво изогнут. */
+  clip-path: ellipse(100% 85% at 100% 50%);
+}
+
+/* =========================
+   HERO — MOBILE ADAPTATION
+   ========================= */
+
+/* ===== HERO MOBILE FIX ===== */
+@media (max-width: 768px){
+
+  /* remove the forced tall hero */
+  .hero-container{
+    min-height: auto !important;
+    height: auto !important;
+    flex-direction: column;
+  }
+
+  /* hide image */
+  .hero-media{
+    display: none !important;
+  }
+
+  /* IMPORTANT: remove side padding from container so purple touches edges */
+  .hero .container{
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  /* make purple block full width and remove desktop tricks */
+  .hero-info{
+    flex: 1 1 auto !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    padding: 36px 20px 30px !important;
+    border-radius: 0 !important;
+  }
+
+  /* disable the “fill left” pseudo element to avoid seams/lines */
+  .hero-info::before{
+    display: none !important;
+  }
+
+  .hero-title{
+    font-size: 34px !important;
+    line-height: 1.1 !important;
+    margin-bottom: 14px !important;
+  }
+
+  .hero-text{
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    max-width: none !important;
+  }
+}

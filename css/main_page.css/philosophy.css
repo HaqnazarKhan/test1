@@ -1,0 +1,102 @@
+/* Отступы для всей секции */
+.mission {
+    padding: 80px 0;
+    display: flex;
+    justify-content: center; /* Центрируем сам блок на странице */
+    background-color: #fff;
+}
+
+/* КОНТЕЙНЕР-СТРОКА */
+.mission-row {
+    display: flex;       /* Включаем Flexbox */
+    align-items: stretch; /* ГЛАВНОЕ: Растягиваем блоки по высоте друг друга */
+    
+    width: 90%;          /* Ширина блока на экране */
+    max-width: 1200px;   /* Максимальная ширина */
+    
+    border-radius: 30px; /* Скругление углов у всего блока */
+    overflow: hidden;    /* Обрезаем всё, что вылезает за скругления */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1); /* Красивая тень */
+}
+
+/* --- ЛЕВАЯ КОЛОНКА (КАРТИНКА) --- */
+.mission-media {
+    flex: 1; /* Занимает 1 долю (50%) */
+    min-height: 400px; /* Минимальная высота, чтобы не схлопнулось */
+    position: relative;
+}
+
+.mission-media img {
+    width: 100%;
+    height: 100%;       /* Растягиваем картинку на всю высоту блока */
+    object-fit: cover;  /* Картинка заполняет область без искажений (обрезается лишнее) */
+    display: block;
+}
+
+/* --- ПРАВАЯ КОЛОНКА (ТЕКСТ) --- */
+.mission-content {
+    flex: 1; /* Занимает 1 долю (50%) */
+    
+    background-color: #8c2388; /* Фиолетовый фон */
+    color: #fff;               /* Белый текст */
+    
+    padding: 60px; /* Внутренние отступы */
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Центрируем текст по вертикали */
+}
+
+.mission-title {
+    font-family: 'EB Garamond', serif;
+    font-size: 32px;
+    line-height: 1.2;
+    margin-bottom: 24px;
+}
+
+.mission-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.95;
+}
+
+/* --- КНОПКА (БЕЛАЯ) --- */
+.btn-mission {
+    align-self: flex-start; /* Кнопка не растягивается, стоит слева */
+    margin-top: 20px;
+    
+    background-color: #fff;
+    color: #8c2388;
+    
+    padding: 15px 35px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.btn-mission:hover {
+    background-color: #f0f0f0;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* --- АДАПТИВНОСТЬ (МОБИЛЬНЫЕ) --- */
+@media (max-width: 992px) {
+    .mission-row {
+        flex-direction: column; /* Блоки встают друг под другом */
+    }
+    
+    .mission-media {
+        height: 300px; /* Фиксируем высоту картинки на телефоне */
+        min-height: auto;
+    }
+    
+    .mission-content {
+        padding: 40px 30px;
+    }
+}

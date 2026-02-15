@@ -1,0 +1,469 @@
+/* ==================== HERO SECTION ==================== */
+.health-hero {
+    position: relative;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    background: linear-gradient(135deg, #8c2388 0%, #a84199 100%);
+}
+
+.hero-image-container {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+}
+
+.hero-image-container::before {
+    content: '';
+    position: absolute;
+    left: -100px;
+    top: 0;
+    bottom: 0;
+    width: 200px;
+    z-index: 2;
+}
+
+.hero-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 3;
+    max-width: 600px;
+    padding: 80px 10% 80px 10%;
+    color: #fff;
+}
+
+.health-hero h1 {
+    font-family: 'EB Garamond', serif;
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 30px;
+    font-weight: 600;
+}
+
+.hero-subtitle {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* ========= FROM main.css (base + sections + grids + footer + buttons) ========= */
+/* :contentReference[oaicite:0]{index=0} */
+
+:root {
+    --brand-purple: #8c2388;
+    --brand-purple-dark: #701c6d;
+    --brand-purple-light: #a84199;
+    --text-dark: #333;
+    --text-medium: #666;
+    --text-light: #999;
+    --bg-light: #f9f4f9;
+    --bg-white: #fff;
+    --border-light: rgba(0,0,0,0.05);
+    --shadow-sm: 0 4px 10px rgba(140, 35, 136, 0.1);
+    --shadow-md: 0 10px 30px rgba(140, 35, 136, 0.15);
+    --shadow-lg: 0 20px 60px rgba(140, 35, 136, 0.2);
+    --transition: all 0.3s ease;
+    --radius-sm: 12px;
+    --radius-md: 20px;
+    --radius-lg: 30px;
+  }
+  
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  
+  body {
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-dark);
+    line-height: 1.6;
+    background: var(--bg-white);
+    overflow-x: hidden;
+  }
+  
+  h2,h3,h4,h5,h6 {
+    font-family: 'EB Garamond', serif;
+    line-height: 1.2;
+    color: var(--text-dark);
+  }
+  h2 { font-size: clamp(32px, 4vw, 48px); margin-bottom: 20px; }
+  h3 { font-size: clamp(24px, 3vw, 36px); margin-bottom: 16px; }
+  
+  p { margin-bottom: 16px; line-height: 1.7; }
+  a { text-decoration: none; color: inherit; transition: var(--transition); }
+  img { max-width: 100%; height: auto; display: block; }
+  ul { list-style: none; }
+  
+  .container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 120px;
+    width: 100%;
+  }
+  @media (max-width: 1200px) { .container { padding: 0 60px; } }
+  @media (max-width: 768px) { .container { padding: 0 20px; } }
+  
+  /* Buttons (used in CTA) */
+  .btn-primary-large,
+  .btn-secondary-large {
+    display: inline-block;
+    padding: 18px 40px;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: 18px;
+    text-align: center;
+    transition: var(--transition);
+    cursor: pointer;
+    border: 2px solid transparent;
+  }
+  .btn-primary-large {
+    background: var(--brand-purple);
+    color: #fff !important;
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-primary-large:hover {
+    background: var(--brand-purple-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+  }
+  .btn-secondary-large {
+    background: transparent;
+    color: var(--brand-purple) !important;
+    border-color: var(--brand-purple);
+  }
+  .btn-secondary-large:hover {
+    background: var(--brand-purple);
+    color: #fff !important;
+    transform: translateY(-2px);
+  }
+  
+  /* Sections */
+  .content-section,
+  .features-section {
+    padding: 100px 0;
+  }
+  .alt-bg { background: var(--bg-light); }
+  
+  .section-header { margin-bottom: 60px; }
+  .section-header.centered { text-align: center; }
+  
+  .section-title {
+    font-family: 'EB Garamond', serif;
+    font-size: clamp(32px, 4vw, 48px);
+    color: var(--brand-purple);
+    margin-bottom: 20px;
+  }
+  .section-title.centered { text-align: center; }
+  
+  .section-intro {
+    font-size: 18px;
+    line-height: 1.8;
+    color: var(--text-medium);
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  /* Features grid 4 */
+  .features-grid-4 {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+  }
+  @media (max-width: 992px) { .features-grid-4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 576px) { .features-grid-4 { grid-template-columns: 1fr; } }
+  
+
+  @media (max-width: 768px) { .footer-content { grid-template-columns: 1fr; gap: 30px; } }
+  
+  
+  /* ========= FROM sections.css (your page blocks: checklist, cards, 2-col, CTA) ========= */
+  /* :contentReference[oaicite:1]{index=1} */
+  
+  /* Feature Card Modern (used in "Біздің артықшылықтарымыз") */
+  .feature-card-modern {
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: var(--radius-md);
+    text-align: center;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    border: 2px solid transparent;
+  }
+  .feature-card-modern:hover {
+    transform: translateY(-10px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--brand-purple);
+  }
+  .feature-icon-large {
+    font-size: 64px;
+    margin-bottom: 25px;
+    display: block;
+  }
+  .feature-card-modern h3 {
+    font-size: 28px;
+    color: var(--brand-purple);
+    margin-bottom: 20px;
+  }
+  .feature-card-modern p {
+    font-size: 15px;
+    color: var(--text-medium);
+    line-height: 1.7;
+    margin: 0;
+  }
+  
+  /* Safety checklist (top block) */
+  .safety-checklist {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .checklist-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: var(--radius-sm);
+    box-shadow: var(--shadow-sm);
+  }
+  .check-icon {
+    width: 40px;
+    height: 40px;
+    background: var(--brand-purple);
+    color: #fff;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 20px;
+    flex-shrink: 0;
+  }
+  .checklist-item p {
+    margin: 0;
+    font-size: 16px;
+    color: var(--text-dark);
+  }
+  @media (max-width: 768px) { .safety-checklist { grid-template-columns: 1fr; } }
+  
+  /* Two column layout (Security standards + Nutrition) */
+  .two-column-layout {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+  }
+  .two-column-layout.reverse { direction: rtl; }
+  .two-column-layout.reverse > * { direction: ltr; }
+  
+  .column-content h2 { color: var(--brand-purple); margin-bottom: 24px; }
+  .column-content p {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-medium);
+    margin-bottom: 24px;
+  }
+  .column-image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .column-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  .column-image:hover img { transform: scale(1.05); }
+  
+  @media (max-width: 992px) {
+    .two-column-layout,
+    .two-column-layout.reverse {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      direction: ltr;
+    }
+  }
+  
+  /* Info list (Security standards left list) */
+  .info-list { display: flex; flex-direction: column; gap: 20px; }
+  .info-item { display: flex; gap: 20px; align-items: flex-start; }
+  .info-icon { font-size: 32px; flex-shrink: 0; }
+  .info-item h4 {
+    font-size: 20px;
+    color: var(--brand-purple);
+    margin-bottom: 8px;
+  }
+  .info-item p { font-size: 15px; color: var(--text-medium); margin: 0; }
+  
+  /* CTA Section (bottom purple block) */
+  .cta-section {
+    padding: 100px 0;
+    background: linear-gradient(135deg, var(--brand-purple) 0%, var(--brand-purple-light) 100%);
+    color: #fff;
+    text-align: center;
+  }
+  .cta-content h2 {
+    color: #fff;
+    font-size: clamp(32px, 4vw, 48px);
+    margin-bottom: 20px;
+  }
+  .cta-content p {
+    font-size: 20px;
+    opacity: 0.95;
+    margin-bottom: 40px;
+  }
+  .cta-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  @media (max-width: 768px) {
+    .content-section,
+    .features-section {
+      padding: 60px 0;
+    }
+  }
+  
+  
+  /* ========= FROM pages.css (HEALTH page specific: special facilities + nutrition items) ========= */
+  /* :contentReference[oaicite:2]{index=2} */
+  
+  .special-facilities {
+    padding: 100px 0;
+  }
+  
+  .facility-showcase {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    margin-bottom: 80px;
+  }
+  .facility-showcase:last-child { margin-bottom: 0; }
+  
+  .facility-showcase.reverse { direction: rtl; }
+  .facility-showcase.reverse > * { direction: ltr; }
+  
+  .facility-image {
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+  .facility-image img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .facility-badge {
+    display: inline-block;
+    background: var(--brand-purple);
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 16px;
+  }
+  
+  .facility-content h3 {
+    font-size: 32px;
+    color: var(--brand-purple);
+    margin-bottom: 20px;
+  }
+  .facility-description {
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--text-medium);
+    margin-bottom: 30px;
+  }
+  
+  .facility-benefits h4 {
+    font-size: 20px;
+    color: var(--text-dark);
+    margin-bottom: 16px;
+  }
+  .facility-benefits ul { list-style: none; padding: 0; }
+  .facility-benefits li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    font-size: 15px;
+    color: var(--text-medium);
+  }
+  .facility-benefits li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--brand-purple);
+    font-weight: bold;
+    font-size: 18px;
+  }
+  
+  .facility-note {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--radius-sm);
+    margin-top: 30px;
+  }
+  .facility-note strong { color: var(--brand-purple); }
+  
+  .medical-staff-note {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: var(--radius-md);
+    margin-top: 30px;
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  .staff-icon { font-size: 48px; flex-shrink: 0; }
+  .medical-staff-note p { margin-bottom: 8px; font-size: 15px; color: var(--text-dark); }
+  .medical-staff-note p:last-child { margin-bottom: 0; }
+  
+  /* Nutrition list blocks (right side) */
+  .nutrition-features {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
+  }
+  .nutrition-item {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: var(--radius-sm);
+  }
+  .nutrition-item h4 {
+    font-size: 18px;
+    color: var(--brand-purple);
+    margin-bottom: 8px;
+  }
+  .nutrition-item p {
+    font-size: 15px;
+    color: var(--text-medium);
+    margin: 0;
+  }
+  
+  @media (max-width: 992px) {
+    .facility-showcase,
+    .facility-showcase.reverse {
+      grid-template-columns: 1fr;
+      gap: 40px;
+      direction: ltr;
+    }
+  }

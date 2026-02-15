@@ -1,0 +1,309 @@
+/* CONTENT SECTION */
+.content-section{
+    padding: 80px 0;
+    background: #ffffff;
+  }
+  
+  /* HEADER BLOCK */
+  .section-header{
+    max-width: 760px;
+    margin-bottom: 48px;
+  }
+  
+  .section-header.centered{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  
+  /* TITLE */
+  .section-header h2{
+    font-family: "EB Garamond", serif;
+    font-size: 44px;
+    font-weight: 600;
+    color: #2b2b2b;
+    margin-bottom: 16px;
+  }
+  
+  /* INTRO TEXT */
+  .section-intro{
+    font-family: "Montserrat", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    color: #666;
+  }
+  
+  /* optional divider like health page */
+  .section-header.centered::after{
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #AD3DA9;
+    margin: 20px auto 0;
+    border-radius: 2px;
+  }
+
+/* ================================
+   GROUPS PAGE — Batyr Bala
+   ================================ */
+
+   :root{
+    --brand:#8c2388;
+    --light-bg:#f9f4f9;
+    --text:#2c2c2c;
+  }
+  
+  /* HERO */
+  .page-hero.groups-hero{
+    background:linear-gradient(135deg,#8c2388,#a84199);
+    padding:90px 0;
+    text-align:center;
+  }
+  
+  .page-hero.groups-hero h1{
+    font-family:'EB Garamond',serif;
+    font-size:56px;
+    color:#fff;
+    margin-bottom:12px;
+  }
+  
+  .hero-subtitle{
+    color:#fff;
+    opacity:.9;
+  }
+  
+  /* OVERVIEW CARDS */
+  .groups-overview{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:22px;
+    margin-top:40px;
+  }
+  
+  .overview-stat{
+    background:#fff;
+    border-radius:20px;
+    padding:22px;
+    display:flex;
+    gap:18px;
+    align-items:center;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    transition:.3s;
+  }
+  
+  .overview-stat:hover{
+    transform:translateY(-6px);
+  }
+  
+  .stat-icon{
+    font-size:32px;
+  }
+  
+  .stat-text h3{
+    font-family:'EB Garamond',serif;
+    margin:0;
+  }
+  
+  .stat-text p{
+    margin:0;
+    color:#666;
+  }
+  
+  /* ================================
+     GROUP BLOCKS
+     ================================ */
+  
+  .groups-details-section{
+    padding:0;
+  }
+  
+  .group-detail-block{
+    padding:80px 0;
+    width:100%;
+  }
+  
+  .group-detail-block.alt-bg{
+    background:var(--light-bg);
+  }
+  
+  .group-header{
+    margin-bottom:26px;
+  }
+  
+  .group-badge{
+    background:var(--brand);
+    color:#fff;
+    display:inline-block;
+    padding:6px 14px;
+    border-radius:999px;
+    font-size:14px;
+    margin-bottom:10px;
+  }
+  
+  .group-header h2{
+    font-family:'EB Garamond',serif;
+    font-size:40px;
+    margin:0 0 6px;
+  }
+  
+  .group-capacity{
+    color:#666;
+  }
+  
+  /* GRID */
+  .group-content-grid{
+    display:grid;
+    grid-template-columns:1.1fr 1fr;
+    gap:50px;
+  }
+  
+  /* TEXT */
+  .group-description h3{
+    font-family:'EB Garamond',serif;
+    color:var(--brand);
+  }
+  
+  .group-description p{
+    line-height:1.7;
+  }
+  
+  .group-program-list{
+    padding:0;
+    margin:0;
+  }
+  
+  .group-program-list li{
+    list-style:none;
+    padding-left:18px;
+    position:relative;
+    margin-bottom:6px;
+  }
+  
+  .group-program-list li::before{
+    content:"✓";
+    position:absolute;
+    left:0;
+    color:var(--brand);
+  }
+  
+  /* NOTE */
+  .group-note{
+    background:#fff;
+    border-radius:14px;
+    padding:16px;
+    margin-top:18px;
+    box-shadow:0 8px 25px rgba(0,0,0,.05);
+  }
+  
+  /* ================================
+     GALLERY
+     ================================ */
+  
+  .group-gallery{
+    display:grid;
+    gap:14px;
+  }
+  
+  .gallery-main{
+    border-radius:24px;
+    overflow:hidden;
+    box-shadow:0 20px 40px rgba(0,0,0,.1);
+    transition:.3s;
+  }
+  
+  .gallery-main:hover{
+    transform:translateY(-6px);
+  }
+  
+  .gallery-main img{
+    width:100%;
+    height:360px;
+    object-fit:cover;
+  }
+  
+  .gallery-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:12px;
+  }
+  
+  .gallery-grid img{
+    width:100%;
+    height:120px;
+    object-fit:cover;
+    border-radius:16px;
+    transition:.3s;
+  }
+  
+  .gallery-grid img:hover{
+    transform:translateY(-5px);
+  }
+  
+  /* ================================
+     SCHEDULE
+     ================================ */
+  
+  .schedule-section{
+    padding:90px 0;
+  }
+  
+  .schedule-section.alt-bg{
+    background:var(--light-bg);
+  }
+  
+  .schedule-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:16px;
+    margin-top:30px;
+  }
+  
+  .schedule-item{
+    background:#fff;
+    border-radius:16px;
+    padding:16px;
+    box-shadow:0 10px 30px rgba(0,0,0,.05);
+    transition:.3s;
+  }
+  
+  .schedule-item:hover{
+    transform:translateY(-5px);
+  }
+  
+  .time{
+    color:var(--brand);
+    font-weight:700;
+  }
+  
+  .activity{
+    color:#555;
+  }
+  
+  /* ================================
+     RESPONSIVE
+     ================================ */
+  
+  @media(max-width:992px){
+    .groups-overview{
+      grid-template-columns:1fr 1fr;
+    }
+  
+    .group-content-grid{
+      grid-template-columns:1fr;
+    }
+  
+    .schedule-grid{
+      grid-template-columns:1fr 1fr;
+    }
+  }
+  
+  @media(max-width:600px){
+    .groups-overview{
+      grid-template-columns:1fr;
+    }
+  
+    .schedule-grid{
+      grid-template-columns:1fr;
+    }
+  }
