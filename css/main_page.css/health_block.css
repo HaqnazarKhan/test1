@@ -72,6 +72,13 @@
 @media (max-width: 992px) {
     .health-row {
         flex-direction: column;
+        gap: 24px !important; /* Делаем аккуратный отступ вместо 60px */
+    }
+
+    .health-image {
+        width: 100%;
+        min-height: auto; /* Чтобы фото не обрезалось */
+        margin-bottom: 0 !important; /* Убираем лишнюю пустоту */
     }
 
     .health-title {

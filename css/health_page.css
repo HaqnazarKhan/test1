@@ -466,4 +466,24 @@
       gap: 40px;
       direction: ltr;
     }
+
+    /* Прячем контейнер с фотографией */
+    .health-hero .hero-image-container {
+      display: none !important;
   }
+
+  /* Растягиваем фиолетовый блок с текстом на всю ширину экрана */
+  .health-hero .hero-content {
+      width: 100% !important;
+      flex: 1 1 auto !important;
+      max-width: none !important;
+      padding: 40px 20px !important; /* Настраиваем аккуратные отступы для телефона */
+  }
+
+  /* Если у самого блока .health-hero был задан двойной фон, делаем его полностью фиолетовым */
+  .health-hero {
+      background: #8c2388 !important; /* Фиолетовый цвет вашего бренда */
+      display: flex !important;
+      min-height: auto !important;
+  }
+}

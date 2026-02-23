@@ -366,6 +366,16 @@
   .features-grid-3{ grid-template-columns: repeat(2, 1fr); }
   .requirements-grid{ grid-template-columns: repeat(2, 1fr); }
   .two-column-layout{ grid-template-columns: 1fr; }
+  /* Делаем рамку для фото более "портретной" (вытянутой вниз) */
+  .teacher-photo {
+    height: 380px !important; /* Вы можете менять эту цифру (например, 350px или 400px), чтобы найти идеальный размер */
+}
+
+/* Гарантируем, что при любой обрезке фокус будет на лице (сверху), а не на животе */
+.teacher-photo img {
+    object-fit: cover !important;
+    object-position: top center !important; 
+}
 }
 
 @media (max-width: 600px){

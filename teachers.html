@@ -22,40 +22,48 @@
   <link rel="stylesheet" href="css/header.css" />
   <link rel="stylesheet" href="css/teachers.css" />
   <link rel="stylesheet" href="css/footer.css" />
+
+  <script src="js/nav.js" defer></script>
 </head>
 
 <body>
 
-    <header class="main-header">
-        <div class="container header-content">
-          <a href="/" class="logo">
-            <img src="assets/images/logo1.svg" alt="Батыр Бала логотипі">
-          </a>
-    
-          <nav class="nav-menu">
-            <ul>
-                <li class="menu-item-has-children">
-                    <a href="#">Біз туралы <span class="arrow"></span></a>
-                    
-                    <ul class="sub-menu">
-                        <li><a href="philosophy.html">Біздің философиямыз</a></li>
-                        <li><a href="teachers.html">Тәрбиешілер</a></li>
-                        <li><a href="health.html">Денсаулық және қауіпсіздік</a></li>
-                    </ul>
-                </li>
-        
-                <li><a href="groups.html">Топтар</a></li>
-                <li><a href="documents.html">Құжаттар</a></li>
-                <li><a href="news.html">Жаңалықтар</a></li>
+  <header class="main-header">
+    <div class="container header-content">
+      <a href="index.html" class="logo">
+        <img src="assets/images/logo1.svg" alt="Батыр Бала логотипі">
+      </a>
+  
+      <!-- ✅ Hamburger button (NEW) -->
+      <button class="nav-toggle" aria-label="Open menu" aria-controls="site-nav" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+  
+      <!-- ✅ Add id="site-nav" (NEW) -->
+      <nav class="nav-menu" id="site-nav">
+        <ul>
+          <li class="menu-item-has-children">
+            <a href="#" class="submenu-toggle">Біз туралы <span class="arrow"></span></a>
+  
+            <ul class="sub-menu">
+              <li><a href="philosophy.html">Біздің философиямыз</a></li>
+              <li><a href="teachers.html">Тәрбиешілер</a></li>
+              <li><a href="health.html">Денсаулық және қауіпсіздік</a></li>
             </ul>
-        
-            <div class="header-actions">
-                <a href="#" class="lang-switch"></a>
-                <a href="https://wa.me/77762968783" class="btn-signup">Жазылу</a>
-            </div>
-        </nav>
+          </li>
+  
+          <li><a href="groups.html">Топтар</a></li>
+          <li><a href="documents.html">Құжаттар</a></li>
+          <li><a href="news.html">Жаңалықтар</a></li>
+        </ul>
+  
+        <div class="header-actions">
+          <a href="#" class="lang-switch"></a>
+          <a href="https://wa.me/77762968783" class="btn-signup">Жазылу</a>
         </div>
-    </header>
+      </nav>
+    </div>
+  </header>
 
   <!-- Hero Section -->
   <section class="page-hero teachers-hero">
@@ -117,17 +125,16 @@
 
         <div class="teacher-card">
           <div class="teacher-photo">
-            <img src="../assets/images/teachers/teacher-1.jpg" alt="Педагог">
+            <img src="assets/workers_img/bagdat.jpg" alt="Педагог">
             <div class="teacher-badge">Меңгеруші</div>
           </div>
 
           <div class="teacher-info">
             <h3>Жақеева Карылга Бағдатқызы</h3>
             <p class="teacher-role">Меңгеруші</p>
-            <p class="teacher-experience">Тәжірибе: 15 жыл</p>
+            <p class="teacher-experience">Тәжірибе: 14 жыл</p>
             <p class="teacher-education">
-              <strong>Білімі:</strong> Педагогикалық университет,
-              Мектепке дейінгі білім беру
+              <strong>Білімі:</strong> Ақтөбе мемлекеттік педагогикалық институты  білімі Жоғары
             </p>
             <div class="teacher-specialization">
               <span class="spec-tag">Басқару</span>
@@ -168,6 +175,26 @@
               <p class="teacher-experience">Тәжірибе: 6 ай</p>
               <p class="teacher-education">
                 <strong>Білімі:</strong>  Қ.Жұбанов атындағы Ақтөбе өңірлік университеті
+              </p>
+              <div class="teacher-specialization">
+                <span class="spec-tag">Педагогика</span>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="teacher-card">
+            <div class="teacher-photo">
+              <img src="assets/workers_img/gulnur.jpg" alt="Педагог">
+              <div class="teacher-badge">Тәрбиеші</div>
+            </div>
+  
+            <div class="teacher-info">
+              <h3>Гулнур Куатжановна</h3>
+              <p class="teacher-role">Тәрбиеші</p>
+              <p class="teacher-experience">Тәжірибе: 1 жыл</p>
+              <p class="teacher-education">
+                <strong>Білімі:</strong>  Жоғарғы көп сапалы “Болашақ колледжі”ЖММ
               </p>
               <div class="teacher-specialization">
                 <span class="spec-tag">Педагогика</span>
@@ -249,7 +276,7 @@
         </div>
 
         <div class="column-image">
-          <img src="../assets/images/training.jpg" alt="Оқыту">
+          <img src="/assets/images/oqytu.webp" alt="Оқыту">
         </div>
       </div>
     </div>

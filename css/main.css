@@ -54,3 +54,37 @@ body {
   opacity: 0.9;
   transform: translateY(-1px);
 }
+
+@media (max-width: 992px) {
+  /* Перестраиваем макет в одну колонку (друг под друга) */
+  .two-column-layout {
+      display: flex !important;
+      flex-direction: column !important; 
+      gap: 24px !important; /* Красивый отступ между фото и текстом */
+  }
+
+  /* Заставляем картинку и текст занимать все 100% ширины экрана */
+  .two-column-layout .column-image,
+  .two-column-layout .column-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+  }
+
+  /* Лайфхак: чтобы картинка на мобильном ВСЕГДА была КРАСИВО СВЕРХУ, а текст под ней */
+  .two-column-layout .column-image {
+      order: -1 !important; 
+  }
+
+  /* Убираем огромный margin-top: 60px, который вы прописали в HTML для reverse, чтобы на телефоне не было дыры */
+  .two-column-layout.reverse {
+      margin-top: 40px !important; 
+  }
+  
+  /* Делаем саму фотографию адаптивной, чтобы не вылезала за края */
+  .two-column-layout .column-image img {
+      width: 100% !important;
+      height: auto !important;
+      object-fit: cover !important;
+  }
+}

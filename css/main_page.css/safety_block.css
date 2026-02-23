@@ -76,18 +76,18 @@
 /* --- АДАПТИВ (ДЛЯ ТЕЛЕФОНОВ) --- */
 @media (max-width: 992px) {
     .safety-row {
-        flex-direction: column; /* Блоки друг под другом */
+        flex-direction: column;
+        gap: 24px !important; /* Делаем аккуратный отступ вместо 60px */
     }
     
-    /* Меняем порядок: Картинка сверху, Текст снизу */
     .safety-image {
         width: 100%;
-        order: -1; 
-        margin-bottom: 30px;
+        order: -1; /* Оставляем картинку сверху */
+        margin-bottom: 0 !important; /* Убираем лишнюю пустоту */
+        min-height: auto; /* Чтобы фото не обрезалось */
     }
     
     .safety-title {
-        font-size: 32px; /* Чуть меньше шрифт на телефоне */
+        font-size: 32px; 
     }
 }
-

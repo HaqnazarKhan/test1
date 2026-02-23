@@ -72,11 +72,15 @@
   @media (max-width: 992px) {
     .teachers-row {
       flex-direction: column;
+      gap: 24px !important; /* Уменьшаем базовое расстояние между фото и текстом */
     }
   
-    /* Если хочешь чтобы картинка была сверху — раскомментируй:
-    .teachers-image { order: -1; }
-    */
+    .teachers-image { 
+      width: 100%;
+      min-height: auto;
+      order: -1; 
+      margin-bottom: 0 !important; /* Убираем лишний отступ, который добавляли ранее */
+    }
   
     .teachers-title {
       font-size: 32px;
