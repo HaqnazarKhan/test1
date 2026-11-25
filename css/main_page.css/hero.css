@@ -55,13 +55,12 @@
 }
 
 .reg-mark {
-  font-size: 0.5em;       /* Уменьшает размер (50% от родителя) */
-  vertical-align: super;  /* Поднимает символ вверх */
-  color: #FDF5E6;            /* Можно сделать его бледнее */
-  margin-left: -15px;       /* Добавляет отступ от текста */
-  line-height: 0;         /* Чтобы не увеличивать высоту всей строки */
+  font-size: 0.5em;       
+  vertical-align: super;  
+  color: #FDF5E6;            
+  margin-left: -4px;         /* <-- Ставим ноль */
+  line-height: 0;         
 }
-
 
 .hero-text {
   font-family: 'Montserrat', sans-serif;

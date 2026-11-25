@@ -17,11 +17,10 @@
 
 /* Логотип */
 .logo img {
-  height: 90px;
+  height: 55px; /* Было 90px. Поменяйте на 55px (или 60px), чтобы смотрелось аккуратно */
   width: auto;
   display: block;
   position: relative;
-  top: 5px; /* Небольшая коррекция */
 }
 
 /* --- НАВИГАЦИЯ (МЕНЮ) --- */
@@ -233,10 +232,11 @@ body.nav-open .nav-overlay {
   }
 
   .logo img {
-      height: 54px;
-      width: auto;
-      display: block;
-  }
+    height: 50px !important; /* Уменьшаем размер очищенного логотипа */
+    width: auto !important;
+    display: block !important;
+    transform: none !important;
+}
 
   /* === САМОЕ ВАЖНОЕ: ДЕЛАЕМ МЕНЮ ШТОРКОЙ === */
   .nav-menu {

@@ -1,0 +1,6 @@
+raw_*/
+*.py
+*_ready.html
+perspektiva_manifest*.json
+__pycache__/
+.vscode/

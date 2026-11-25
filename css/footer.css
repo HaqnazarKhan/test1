@@ -55,6 +55,29 @@
     color: rgba(255,255,255,0.6);
     font-size: 14px;
   }
+
+/* Делаем одинаковые отступы для контактов в подвале (как у списка слева) */
+.footer-col p {
+  margin-bottom: 10px; 
+}
+
+/* Убираем лишний отступ у самой последней ссылки (Instagram), чтобы низ был ровным */
+.footer-col p:last-child {
+  margin-bottom: 0;
+}
+
+  /* Универсальный стиль для всех ссылок в подвале (2GIS, WhatsApp, Inst) */
+.footer-link {
+  color: #FDF5E6; /* Цвет вашего текста (кремово-белый) */
+  text-decoration: none; /* Убираем нижнее подчеркивание */
+  transition: opacity 0.3s ease; /* Плавность для анимации */
+}
+
+/* Эффект при наведении на любую ссылку */
+.footer-link:hover {
+  opacity: 0.8; /* Делаем чуть прозрачнее */
+  text-decoration: underline; /* Добавляем подчеркивание, чтобы было понятно, что это кнопка */
+}
   
   /* MOBILE */
   @media (max-width: 768px) {
